@@ -24,8 +24,13 @@ module ColorSplitter {
         function buildRow(color) {
             var rawRgbaColor = colorToRgba(color),
                 hexCode = colorToHex(rawRgbaColor),
+								colorName = "";
+
+						// Only show a color name if opacity == 1
+						// because the alpha channel isn't used for searching in the lookup table
+						if (rawRgbaColor[3] == 1) {
                 colorName = Colors.getColorName(hexCode.substring(0, hexCode.length - 2));
-            console.log(hexCode, hexCode.substring(0, hexCode.length - 2));
+						}
             return "<tr>" +
                 "<td class='colorSample' style='background-color: " + rgbaToCss(rawRgbaColor) + "'></td>" +
                 "<td>" +
