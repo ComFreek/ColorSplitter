@@ -1,0 +1,18 @@
+{
+  "name": "ColorSplitter",
+  "version": "1.0.0",
+  "author": "ComFreek <comfreek@outlook.com>",
+  "license": "MIT",
+  "private": true,
+  "dependencies": {
+    "css-color-names": "^0.0.1"
+  },
+  "devDependencies": {
+    "event-stream": "^3.1.7",
+    "gulp": "^3.8.10",
+    "gulp-concat": "^2.4.2",
+    "gulp-run": "^1.6.5",
+    "gulp-typescript": "^2.3.0"
+  },
+	"private": true
+}
