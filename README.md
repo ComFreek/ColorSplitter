@@ -1,5 +1,9 @@
 # ColorSplitter
 
+## Screenshot
+![Screenshot of ColorSplitter fed with the Google logo](https://raw.githubusercontent.com/ComFreek/ColorSplitter/screenshots/google-logo-screenshot.PNG)
+
+
 ## Description
 ColorSplitter is a web app to show each and every color an image uses.
 
