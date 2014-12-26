@@ -6,26 +6,34 @@
 		<link rel="stylesheet" href="css/styles.css" />
 	</head>
 	<body>
-		<input type="file" id="imageFile" />
-		<hr>
-		<span id="curPage"></span> / <span id="numberOfPages"></span>
-		<button id="prevPage">Previous page</button>
-		<button id="nextPage">Next page</button>
-		<button id="next20Page">+20 page</button>
-		<br>
-		<table id="colorTable">
-			<thead>
-				<tr>
-					<th>Color sample</th>
-					<th>RGBA</th>
-					<th>Hex</th>
-					<th>CSS color name (if available)</th>
-				</tr>
-			</thead>
-			<tbody></tbody>
-			<tfoot></tfoot>
-		</table>
-
+		<main>
+			<div id="imageUpload">
+				<img src="http://placekitten.com/g/200/300" class="placeholder" id="previewImage" /><br />
+				<input type="file" id="imageFile" /><button onclick="document.getElementById('imageFile').click()">Select image</button>
+			</div>
+			<br style="clear: both" />
+			<div id="output">
+				<nav id="navigation">
+					Page #<span id="curPage"></span> / <span id="numberOfPages"></span><br>
+					<button id="prevPage">Previous page</button>
+					<button id="nextPage">Next page</button>
+					<button id="next20Page">+20 page</button>
+				</nav>
+				<table id="colorTable">
+					<thead>
+						<tr>
+							<th>Color sample</th>
+							<th>RGBA</th>
+							<th>Hex</th>
+							<th>CSS color name (if available)</th>
+						</tr>
+					</thead>
+					<tbody></tbody>
+					<tfoot></tfoot>
+				</table>
+				<!--<a href="#imageUploadContainer">Back to top</a>-->
+			</div>
+		</main>
 		<script src="js/all.js"></script>
 	</body>
 </html>

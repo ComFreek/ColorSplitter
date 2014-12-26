@@ -13,21 +13,28 @@ module ColorSplitter {
 
         var colorTable = <HTMLTableElement>document.getElementById("colorTable"),
             curPage = <HTMLSpanElement>document.getElementById("curPage"),
-            numberOfPages = <HTMLSpanElement>document.getElementById("numberOfPages");
+            numberOfPages = <HTMLSpanElement>document.getElementById("numberOfPages"),
+						previewImage = <HTMLImageElement>document.getElementById("previewImage");
 
 
         function processImageFile() {
             if (this.files.length < 1) {
                 return;
             }
-
-            ImageProcessing.fileToImageData(this.files[0], (imageData) => {
-                colors = ImageProcessing.collectColors(imageData);
+						
+						previewImage.classList.remove("placeholder");
+						
+						ImageProcessing.fileToDataURL(this.files[0], (dataURL) => {
+							previewImage.onload = function () {
+								colors = ImageProcessing.collectColors(ImageProcessing.imageToImageData(previewImage));
 
                 page = 1;
                 numberOfPages.innerText = Math.ceil(colors.size / colorsPerPage).toString();
                 showCurrentPage();
-            });
+							};
+							
+							previewImage.src = dataURL;
+						});
         }
 
         function showCurrentPage() {
