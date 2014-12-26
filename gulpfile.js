@@ -4,7 +4,7 @@ var eventStream = require('event-stream');
 var run = require('gulp-run');
 var concat = require('gulp-concat');
 
-gulp.task('default', ['copy-html', 'generate-color-mappings', 'copy-css', 'scripts']);
+gulp.task('default', ['copy-html', 'generate-color-mappings', 'copy-css', 'copy-img', 'scripts']);
 
 gulp.task('scripts', ['generate-color-mappings'], function() {
 	return gulp
@@ -22,6 +22,10 @@ gulp.task('copy-css', function(){
 
 gulp.task('copy-html', function () {
 	return gulp.src('src/html/index.html').pipe(gulp.dest('release'));
+});
+
+gulp.task('copy-img', function () {
+		return gulp.src('src/img/**.*', {base: 'src'}).pipe(gulp.dest('release'));
 });
 
 gulp.task('generate-color-mappings', function () {

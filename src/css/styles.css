@@ -9,6 +9,14 @@ body, html {
 	height: 100%;
 }
 
+header {
+	text-align: center;
+}
+
+header h1, header span {
+	display: inline-block;
+}
+
 main {
 	width: 70%;
 	min-height: 90%;
@@ -33,7 +41,8 @@ main {
 
 #previewImage {
 	max-width: 25%;
-	max-height: 25%;
+	/* This doesn't work because `main` doesn't have a fixed height.
+	max-height: 25%;*/
 }
 
 #imageFile {
