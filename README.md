@@ -19,6 +19,7 @@ These browsers are known to work with ColorSplliter:
 
 - Google Chrome 39.0.2171.93 (on Android)
 - Google Chrome 41.0.2258.2 canary (on Windows)
+- Opera 26.0.1656.60
 - Firefox Nightly 37.0a1 (2014-12-25)<br>
   (Note that the number of pages and the current page number are erroneously not shown, however, the rest of the web app is still usable.)
 
