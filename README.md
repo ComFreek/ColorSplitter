@@ -1,5 +1,6 @@
 # ColorSplitter
 
+Website: http://comfreek.github.io/ColorSplitter/<br>
 Demo: http://comfreek.github.io/ColorSplitter/release/index.html<br>
 Idea from SoftwareRecommendations.SE: [Web app to extract all colours of an image](http://softwarerecs.stackexchange.com/a/14864/583)
 
