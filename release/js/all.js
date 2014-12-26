@@ -173,22 +173,18 @@ var ColorSplitter;
             ctx.drawImage(image, 0, 0);
             return ctx;
         }
-        function fileToImage(file, callback) {
-            var image = new Image(), reader = new FileReader();
+        function fileToDataURL(file, callback) {
+            var reader = new FileReader();
             reader.addEventListener("load", function fileRead() {
-                image.src = reader.result;
-            });
-            image.addEventListener("load", function imageLoaded() {
-                callback(image);
+                callback(reader.result);
             });
             reader.readAsDataURL(file);
         }
-        function fileToImageData(file, callback) {
-            fileToImage(file, function (image) {
-                callback(drawImageInCanvas(image).getImageData(0, 0, image.naturalWidth, image.naturalHeight));
-            });
+        ImageProcessing.fileToDataURL = fileToDataURL;
+        function imageToImageData(image) {
+            return drawImageInCanvas(image).getImageData(0, 0, image.naturalWidth, image.naturalHeight);
         }
-        ImageProcessing.fileToImageData = fileToImageData;
+        ImageProcessing.imageToImageData = imageToImageData;
         function collectColors(imageData) {
             var w = imageData.width, h = imageData.height, data = imageData.data, colors = new Set();
             for (var y = 0; y < h; y++) {
@@ -281,16 +277,20 @@ var ColorSplitter;
         var colors;
         var page = 1;
         var colorsPerPage = 100;
-        var colorTable = document.getElementById("colorTable"), curPage = document.getElementById("curPage"), numberOfPages = document.getElementById("numberOfPages");
+        var colorTable = document.getElementById("colorTable"), curPage = document.getElementById("curPage"), numberOfPages = document.getElementById("numberOfPages"), previewImage = document.getElementById("previewImage");
         function processImageFile() {
             if (this.files.length < 1) {
                 return;
             }
-            ColorSplitter.ImageProcessing.fileToImageData(this.files[0], function (imageData) {
-                colors = ColorSplitter.ImageProcessing.collectColors(imageData);
-                page = 1;
-                numberOfPages.innerText = Math.ceil(colors.size / colorsPerPage).toString();
-                showCurrentPage();
+            previewImage.classList.remove("placeholder");
+            ColorSplitter.ImageProcessing.fileToDataURL(this.files[0], function (dataURL) {
+                previewImage.onload = function () {
+                    colors = ColorSplitter.ImageProcessing.collectColors(ColorSplitter.ImageProcessing.imageToImageData(previewImage));
+                    page = 1;
+                    numberOfPages.innerText = Math.ceil(colors.size / colorsPerPage).toString();
+                    showCurrentPage();
+                };
+                previewImage.src = dataURL;
             });
         }
         function showCurrentPage() {
