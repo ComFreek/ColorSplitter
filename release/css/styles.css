@@ -1,0 +1,4 @@
+#colorTable tr > td:first-child + td , #colorTable tr > td:first-child + td + td {
+	font-family: monospace;
+	text-align: right;
+}

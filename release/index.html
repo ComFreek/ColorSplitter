@@ -1,0 +1,31 @@
+<!doctype html>
+<html ng-app="colorSplitter">
+	<head>
+		<title>ColorSplitter by ComFreek</title>
+		<meta charset="utf-8" />
+		<link rel="stylesheet" href="css/styles.css" />
+	</head>
+	<body>
+		<input type="file" id="imageFile" />
+		<hr>
+		<span id="curPage"></span> / <span id="numberOfPages"></span>
+		<button id="prevPage">Previous page</button>
+		<button id="nextPage">Next page</button>
+		<button id="next20Page">+20 page</button>
+		<br>
+		<table id="colorTable">
+			<thead>
+				<tr>
+					<th>Color sample</th>
+					<th>RGBA</th>
+					<th>Hex</th>
+					<th>CSS color name (if available)</th>
+				</tr>
+			</thead>
+			<tbody></tbody>
+			<tfoot></tfoot>
+		</table>
+
+		<script src="js/all.js"></script>
+	</body>
+</html>
