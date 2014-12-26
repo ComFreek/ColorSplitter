@@ -1,6 +1,7 @@
 # ColorSplitter
 
 Demo: http://comfreek.github.io/ColorSplitter/release/index.html
+Idea from SoftwareRecommendations.SE: [Web app to extract all colours of an image](http://softwarerecs.stackexchange.com/a/14864/583)
 
 ## Screenshot
 ![Screenshot of ColorSplitter fed with the Google logo](https://raw.githubusercontent.com/ComFreek/ColorSplitter/screenshots/google-logo-screenshot.PNG)
@@ -20,7 +21,7 @@ These browsers are known to work with ColorSplliter:
   (Note that the number of pages and the current page number are erroneously not shown, however, the rest of the web app is still usable.)
 
 ## How to install (for end users)
-1. Download the latest release: https://github.com/ComFreek/ColorSplitter/releases/tag/1.0.0.
+1. Download the latest release: https://github.com/ComFreek/ColorSplitter/releases.
 2. Extract the contents of the ZIP folder to your favorite location.
 3. Open `index.html` in a supported browser.
 
@@ -30,14 +31,10 @@ These browsers are known to work with ColorSplliter:
 
 2. Install NodeJS.
 
-3. Execute these commands inside the project's directory:
-   ```
- npm install
- gulp 
-```
+3. Execute `npm install && gulp` inside the project's directory.
 
 4. Open `release/index.html` in a supported browser.
 
 ## Author, License
-ComFreek<br>
+[ComFreek](https://github.com/ComFreek), [@ComFreek](http://twitter.com/ComFreek)
 MIT License (c) 2014 ComFreek
