@@ -1,5 +1,7 @@
 # ColorSplitter
 
+Demo: http://comfreek.github.io/ColorSplitter/release/index.html
+
 ## Screenshot
 ![Screenshot of ColorSplitter fed with the Google logo](https://raw.githubusercontent.com/ComFreek/ColorSplitter/screenshots/google-logo-screenshot.PNG)
 
