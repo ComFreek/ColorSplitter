@@ -1,33 +1,25 @@
-var gulp = require('gulp');
-var ts = require('gulp-typescript');
-var eventStream = require('event-stream');
-var run = require('gulp-run');
-var concat = require('gulp-concat');
+const gulp = require('gulp');
+const browserify = require('browserify');
+const source = require('vinyl-source-stream');
+const tsify = require('tsify');
 
-gulp.task('default', ['copy-html', 'generate-color-mappings', 'copy-css', 'copy-img', 'scripts']);
-
-gulp.task('scripts', ['generate-color-mappings'], function() {
-	return gulp
-	        .src('src/js/*.ts')
-	        .pipe(ts())
-	        .js.pipe(concat('all.js'))
-					.pipe(gulp.dest('release/js'));
+gulp.task('copy-non-js-files', function () {
+	return gulp.src(
+		['src/index.html', 'src/css/**/*', 'src/img/**/*'],
+		{ base: 'src' }
+	).pipe(gulp.dest('dist'));
 });
 
-gulp.task('copy-css', function(){
-	return gulp.src([
-		'src/css/styles.css'
-	], {base: 'src'}).pipe(gulp.dest('release'));
-});
-
-gulp.task('copy-html', function () {
-	return gulp.src('src/html/index.html').pipe(gulp.dest('release'));
-});
-
-gulp.task('copy-img', function () {
-		return gulp.src('src/img/**.*', {base: 'src'}).pipe(gulp.dest('release'));
-});
-
-gulp.task('generate-color-mappings', function () {
-	run('node src/generate-color-mappings.js src/js/colors.ts').exec();
-});
+gulp.task('default', gulp.series('copy-non-js-files', () => {
+	return browserify({
+		basedir: '.',
+		debug: true,
+		entries: ['src/js/gui.ts'],
+		cache: {},
+		packageCache: {}
+	})
+	.plugin(tsify)
+	.bundle()
+	.pipe(source('bundle.js'))
+	.pipe(gulp.dest('dist'));
+}));

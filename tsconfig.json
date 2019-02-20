@@ -1,0 +1,10 @@
+{
+	"include": [
+		"src/js/**/*.ts"
+	],
+	"compilerOptions": {
+		"noImplicitAny": false,
+		"target": "es2015",
+		"outFile": "src/js/all.js"
+	}
+}

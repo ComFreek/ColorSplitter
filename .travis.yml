@@ -1,0 +1,28 @@
+language: node_js
+node_js:
+  - "node"
+
+os:
+  # Guarantee that the "cp" below in before_deploy exists and works
+  # (Might as well be Mac OS X; in any case not Windows where "cp" is
+  #  named "copy".)
+  - linux
+
+before_install:
+  - npm install -g greenkeeper-lockfile
+
+install: npm install
+
+before_script:
+  - npm install -g gulp-cli
+script: gulp
+
+deploy:
+  provider: pages
+  local-dir: dist
+  skip-cleanup: true
+  github-token: $GITHUB_PAGES_DEPLOYMENT_TOKEN
+  keep-history: true
+  on:
+    branch: master
+  target-branch: gh-pages

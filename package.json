@@ -5,13 +5,17 @@
   "license": "MIT",
   "private": true,
   "dependencies": {
-    "css-color-names": "^0.0.1"
+    "css-color-names": "^1.0.1"
   },
   "devDependencies": {
-    "event-stream": "^3.1.7",
-    "gulp": "^3.8.10",
-    "gulp-concat": "^2.4.2",
-    "gulp-run": "^1.6.5",
-    "gulp-typescript": "^2.3.0"
+    "browserify": "^16.2.3",
+    "event-stream": "^4.0.1",
+    "gulp": "^4.0.0",
+    "gulp-concat": "^2.6.1",
+    "gulp-run": "^1.7.1",
+    "gulp-typescript": "^5.0.0",
+    "tsify": "^4.0.1",
+    "typescript": "^3.3.3",
+    "vinyl-source-stream": "^2.0.0"
   }
 }
