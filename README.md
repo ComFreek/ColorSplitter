@@ -22,7 +22,7 @@ The user simply selects a file, which then gets analyzed on the client-side. No 
 3. Open `index.html`.
 
 ## How to install (for developers)
-1. Clone, `npm i -g gulp`, `npm i`, `gulp`.
+1. Clone, `npm i -g gulp-cli`, `npm i`, `gulp`.
 2. Open `dist/index.html`.
 
 ## Author, License
