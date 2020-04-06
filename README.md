@@ -1,5 +1,5 @@
 [![Build Status](https://img.shields.io/travis/ComFreek/ColorSplitter.svg)](https://travis-ci.org/ComFreek/ColorSplitter)
-[![Greenkeeper badge](https://badges.greenkeeper.io/ComFreek/ColorSplitter.svg)](https://greenkeeper.io/)
+
 &nbsp; &nbsp; [Demo](http://comfreek.github.io/ColorSplitter/) | [Download for (static) self-hosting](https://github.com/ComFreek/ColorSplitter/archive/gh-pages.zip)
 
 # ColorSplitter
