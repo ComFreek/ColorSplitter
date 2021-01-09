@@ -15,7 +15,7 @@
     "gulp-run": "1.7.1",
     "gulp-typescript": "5.0.1",
     "tsify": "4.0.2",
-    "typescript": "3.5.3",
+    "typescript": "3.9.7",
     "vinyl-source-stream": "2.0.0"
   }
 }
