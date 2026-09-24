@@ -10,7 +10,7 @@
   "devDependencies": {
     "browserify": "17.0.0",
     "event-stream": "4.0.1",
-    "gulp": "4.0.2",
+    "gulp": "5.0.1",
     "gulp-concat": "2.6.1",
     "gulp-run": "1.7.1",
     "gulp-typescript": "5.0.1",
